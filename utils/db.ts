@@ -54,18 +54,8 @@ export const initialSettings = {
 
 export type Settings = typeof initialSettings
 
+// 从 Cloudflare Workers AI 模型页面添加新模型
 export const textGenModels: Model[] = [{
-    id: 'gemini-pro',
-    name: 'Gemini Pro',
-    provider: 'google',
-    type: 'chat'
-}, {
-    id: 'gpt-3.5-turbo',
-    name: 'ChatGPT-3.5-turbo',
-    provider: 'openai',
-    endpoint: 'chat/completions',
-    type: 'chat'
-}, {
     id: '@cf/qwen/qwen1.5-14b-chat-awq',
     name: 'qwen1.5-14b-chat-awq',
     provider: 'workers-ai',
@@ -100,6 +90,16 @@ export const textGenModels: Model[] = [{
     name: 'llama-3-8b-instruct',
     provider: 'workers-ai',
     type: 'chat'
+}, {
+    id: '@cf/anthropic/claude-2',
+    name: 'claude-2',
+    provider: 'workers-ai',
+    type: 'chat'
+}, {
+    id: '@cf/openai/gpt-4-turbo',
+    name: 'gpt-4-turbo',
+    provider: 'workers-ai',
+    type: 'chat'
 }]
 
 export const imageGenModels: Model[] = [{
@@ -115,6 +115,16 @@ export const imageGenModels: Model[] = [{
 }, {
     id: '@cf/bytedance/stable-diffusion-xl-lightning',
     name: 'stable-diffusion-xl-lightning',
+    provider: 'workers-ai-image',
+    type: 'text-to-image'
+}, {
+    id: '@cf/midjourney/midjourney-v5.2',
+    name: 'midjourney-v5.2',
+    provider: 'workers-ai-image',
+    type: 'text-to-image'
+}, {
+    id: '@cf/eleutherai/gpt-neox-20b',
+    name: 'gpt-neox-20b',
     provider: 'workers-ai-image',
     type: 'text-to-image'
 }]
